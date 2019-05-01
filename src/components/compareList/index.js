@@ -14,6 +14,9 @@ const Comparelist = ({ repositories, removeRepository, updateRepository }) => (
 
         <ul>
           <li>
+            <small>{repository.description}</small>
+          </li>
+          <li>
             {repository.stargazers_count} <small>stars</small>
           </li>
           <li>
@@ -21,6 +24,9 @@ const Comparelist = ({ repositories, removeRepository, updateRepository }) => (
           </li>
           <li>
             {repository.open_issues_count} <small>issues</small>
+          </li>
+          <li>
+            {repository.language} <small>language</small>
           </li>
           <li>
             {repository.lastCommit} <small>last commit</small>

@@ -25,8 +25,6 @@ export default class Main extends Component {
 
     this.setState({ loading: true });
 
-    const { repositoryInput, repositories } = this.state;
-
     try {
       const { data: repository } = await api.get(`/repos/${this.state.repositoryInput}`);
 
@@ -70,14 +68,14 @@ export default class Main extends Component {
     const repository = repositories.find(repo => repo.id === id);
 
     try {
-      const { data: Repository } = await api.get(`/repos/${repository.full_name}`);
+      const { data } = await api.get(`/repos/${repository.full_name}`);
 
-      Repository.last_commit = moment(Repository.pushed_at).fromNow();
+      data.last_commit = moment(data.pushed_at).fromNow();
 
       this.setState({
         repositoryError: false,
         repositoryInput: '',
-        repositories: repositories.map(repo => (repo.id === Repository.id ? Repository : repo)),
+        repositories: repositories.map(repo => (repo.id === data.id ? data : repo)),
       });
 
       await localStorage.setItem('@GitCompare:repositories', JSON.stringify(repositories));

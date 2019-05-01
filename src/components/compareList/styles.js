@@ -29,6 +29,8 @@ export const Repository = styled.div`
     small {
       font-size: 14px;
       color: #666;
+      display: flex;
+      justify-content: center;
     }
 
     img {
@@ -41,12 +43,15 @@ export const Repository = styled.div`
     li {
       font-weight: bold;
       padding: 12px 20px;
+      display: flex;
+      justify-content: center;
 
       small {
         font-weight: normal;
         font-size: 12px;
         color: #999;
         font-style: italic;
+        margin-left: 10px;
       }
 
       &:nth-child(2n-1) {
@@ -69,17 +74,19 @@ export const Repository = styled.div`
       }
       &:nth-child(2n) {
         border: 1px solid #c11927;
-        color: #c11927;
+        color: #fff;
+        background: #aa1622;
         &:hover {
-          background: #aa1622;
+          background: #c11927;
           color: #fff;
         }
       }
       &:nth-child(2n - 1) {
         border: 1px solid #116088;
-        color: #116088;
+        color: #fff;
+        background: #0e5071;
         &:hover {
-          background: #0e5071;
+          background: #116088;
           color: #fff;
         }
       }
